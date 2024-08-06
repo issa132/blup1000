@@ -11,4 +11,4 @@
 module load python/3.6
 source ~/jupyter1/bin/activate
 
-python train_model_tcn.py
+python WrightFisher.py
