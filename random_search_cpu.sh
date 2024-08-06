@@ -8,7 +8,7 @@
 #SBATCH --mail-user=issa132@hotmail.com   # Email to which notifications will be $
 
 
-module load python/3.6
+module load python/3.12
 source ~/jupyter1/bin/activate
 
 python WrightFisher.py
