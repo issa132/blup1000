@@ -1,0 +1,70 @@
+Algorithme de création de la population: 
+
+Input: 
+       genotypeDeBase,
+       tailleDeLaPopulation,
+       nucleotide,
+       longueurDesSequences,
+       tauxDeMutation,
+       nombreDenvironnement,
+       valeurPhenotypeDeBase,
+
+
+Output: 
+
+      Flist liste des genotypes de la population
+      Glist liste des valeurs des phenotypes liés aux génotypes
+      Hlist liste des différents environnements dont appartient chaque genotype. 
+
+
+Begin
+
+      Flist  <--- "ATGCAAAAATGCAATAATGC"
+      valeurPhenotypeDeBase  <---  360
+
+      Fonction nombreDeMutation: 
+       Begin
+        lambda  <---   tauxDeMutation * longueurDesSequences * tailleDeLaPopulation
+        return random.poisson(lambda)
+       End
+
+
+
+
+       Fonction obtenir_un_genotype_aleatoire: 
+        Begin
+          genotype <--- Flist
+          return random.choice(genotype)
+        End
+
+
+       Fonction definir_la_position_de_mutation:  
+        Begin
+           position <--- random.choice(longueurDesSequences)
+           mutations_possibles <---  list(nucleotide)
+           mutation <---  random.choice(mutations_possibles)
+           nouveauGenotype <---  genotypeDeBase[:position] + mutation + genotyoeDeBase[position+1:]
+           return nouveauGenotype
+        End
+
+
+        Fonction obtenir_un_environnement_aleatoire:
+        Begin
+          Env  <--- random.randInt(nombreDenvironnement)+1
+          return Env
+        End
+        
+
+        Fonction faire_une_mutation:
+        Begin
+          Env  <--- random.randInt(nombreDenvironnement)+1
+          return Env
+        End
+
+
+        
+
+
+        
+
+        
